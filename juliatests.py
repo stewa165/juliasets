@@ -63,7 +63,7 @@ class TestRandomC:
         assert self.j._d == 0.1
         print "Test that complex plane is regenerated"
         print "len(_complexplane) = ", len(self.j._complexplane)
-        print "int(4.0 / 0.1) = ", int(4.0 / 0.1)**2
+        print "int(4.0 / 0.1)**2 = ", int(4.0 / 0.1)**2
         assert len(self.j._complexplane) == int(4.0 / 0.1)**2
     
     def test_generate(self):
@@ -102,12 +102,12 @@ class TestHuge:
         def check_z(z):
             """Test all z escape after 1 iteration"""
             print "z = ", z
-            print "z^2 = ", z**2
-            print "z^2 + c = ", z**2 + 16
+            print "z**2 = ", z**2
+            print "z**2 + c = ", z**2 + 16
             print "juliamap(z) = ", TestHuge.j.juliamap(z)
             assert TestHuge.j.iterate(z) == 1
         # Again, a generator runs a test for every yield
         for _ in xrange(100):
             z = rand_range()
             yield check_z, z
-        
+
