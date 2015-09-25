@@ -41,7 +41,7 @@ class TestRandomC:
     def test_n_value(self):
         """Test that n is an attribute"""
         assert self.j.n == self.n
-        
+    
     def test_juliamap(self):
         """Test that juliamap is implemented properly"""
         z = rand_range()
@@ -69,9 +69,9 @@ class TestRandomC:
     def test_generate(self):
         """Test that generating the julia set works"""
         self.j.set_spacing(0.1)
-        s = self.j.generate()
+        self.j.generate()
         print "Test that j.set exists, and is of the same length as j._complexplane"
-        assert (self.j.set == s) and (len(self.j.set) == len(self.j._complexplane))
+        assert (len(self.j.set) == len(self.j._complexplane))
 
 class TestTrivial:
     """Test that a seed value of c=0 leaves the unit circle invariant"""
